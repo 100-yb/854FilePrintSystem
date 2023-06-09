@@ -1,0 +1,33 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>854打印店</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function validate() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			if (username === "" || password === "") {
+				alert("用户名和密码不能为空！");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<div class="login-box">
+		<h1>用户登录</h1>
+		<form method="post" action="{{ url_for('handle_login') }}" onsubmit="return validate()">
+			<label for="username">用户名（学号）</label>
+			<input type="text" id="username" name="username" placeholder="请输入用户名" required>
+			<label for="password">密码（默认为sztu@学号后六位）</label>
+			<input type="password" id="password" name="password" placeholder="请输入密码" required>
+			<button type="submit">登录</button>
+		</form>
+		<p>还没有账号？点击<a href="register.html">这里</a>注册。</p>
+	</div>
+</body>
+</html>

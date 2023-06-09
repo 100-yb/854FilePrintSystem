@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>功能区块跳转页面</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/功能跳转.css') }}">
+</head>
+<body>
+  <div class="background-image"></div>
+  <div class="container">
+    <h1>欢迎使用我们的服务</h1>
+    <div class="function-blocks">
+      <div class="function-block">
+        <a href="{{ url_for('print_or_copy', option='print') }}">
+          <h2>打印</h2>
+          <p>打印文档、照片等</p>
+        </a>
+      </div>
+      <div class="function-block">
+        <a href="{{ url_for('print_or_copy', option='copy') }}">
+          <h2>复印</h2>
+          <p>复印文件、图纸等</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

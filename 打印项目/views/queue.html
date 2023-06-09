@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>打印排队</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // 刷新页面的函数
+      function refreshQueue() {
+        $.ajax({
+          url: '/queue_length',
+          type: 'GET',
+          success: function(response) {
+            $('#queue-length').text(response);
+          },
+          error: function(error) {
+            console.log('刷新队列长度失败:', error);
+          }
+        });
+      }
+
+      // 每5秒刷新页面
+      setInterval(refreshQueue, 5000);
+    });
+  </script>
+</head>
+<body>
+  <h1>打印排队</h1>
+  <p>前面还有 <span id="queue-length">0</span> 个人在排队。</p>
+</body>
+</html>

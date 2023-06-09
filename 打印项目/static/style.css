@@ -1,0 +1,50 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f1f1f1;
+	background-image: url("月球.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+	opacity: 0.88;
+}
+
+.login-box {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #ccc;
+	padding: 20px;
+	max-width: 400px;
+	margin-left: 100px;
+	margin-top: 150px;
+}
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #4c56af
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+
+button[type="button"] {
+	background-color: #4c56af;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+/* hover:鼠标悬停功能 */
+button[type="button"]:hover {
+	background-color: #3e8e41;
+}

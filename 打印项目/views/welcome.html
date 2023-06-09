@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>854打印店</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="welcome-box">
+		<h1>欢迎，{{ username }}！</h1>
+		<p>您已成功登录。</p>
+		<p><a href="{{ url_for('login') }}">退出登录</a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='打印.css') }}">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>文件打印</title>
+	<link rel="stylesheet" type="text/css" href="打印.css">
+</head>
+<body>
+	<div class="print-box">
+		<h1>文件打印</h1>
+		<form action="/print" method="POST" enctype="multipart/form-data">
+			 <!-- 选择文件功能 -->
+			<input type="file" name="file" multiple onchange="handleFileSelect(event)"><br>
+			<output id="fileList"></output><br>
+			<!-- 上传文件功能 -->
+			
+			<!-- 选择单双面 -->
+			<input type="radio" name="side" id="two" value="双面" checked="checked"> <label for="two"> 双面</label>
+			<input type="radio" name="side" id="one" value="单面"> <label for="one"> 单面</label>			
+			<!-- 黑白、彩印 -->
+			<input type="radio" name="color" id="normal" value="黑白" checked="checked"> <label for="normal"> 黑白</label> 
+			<input type="radio" name="color" id="cool" value="彩印"> <label for="cool"> 彩印</label>			
+
+			<label for="copies">打印份数</label>
+			<input type="number" id="copies" name="copies" placeholder="请输入打印份数" min="1" max="100" required>
+			<button type="submit" onclick="printFile()">打印</button>
+		</form>
+	</div>
+	<script src="{{ url_for('static',filename = 'js/打印.js')}}"></script>
+</body>
+</html>
